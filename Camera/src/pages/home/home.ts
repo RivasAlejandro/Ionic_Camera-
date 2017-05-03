@@ -1,26 +1,26 @@
 import	{	Component,	Input	}	from	'@angular/core';
 import	{	NavController	}	from	'ionic-angular';
-import	{	Camera }	from	'@ionic-native/camera';
+import	{	Camera }	from	'ionic-native/camera';
 @Component({
 		selector:	'page-home',
-		templateUrl:	'home.html'
+		templateUrl:'home.html'
 })
 export	class	HomePage	{
 		public	imageData:	string;
-    public camera : Camera;
+    
 		@Input('useURI')	useURI:	Boolean	=	true;
 		
 		constructor(public	navCtrl:	NavController)	{
 		}
 		
 		getPicture(sourceType){
-				this.camera.getPicture({
+				Camera.getPicture({
 								quality:	50,
 								allowEdit:	true,
-								encodingType:	this.camera.EncodingType.JPEG,
+								encodingType:	Camera.EncodingType.JPEG,
 								saveToPhotoAlbum:	false,
-								destinationType:	this.useURI	?	this.camera.DestinationType.FILE_URI	:	
-this.camera.DestinationType.DATA_URL,
+								destinationType:	this.useURI	?	Camera.DestinationType.FILE_URI	:	
+Camera.DestinationType.DATA_URL,
 								targetWidth:	800,
 								targetHeight:	800,
 								sourceType:	sourceType

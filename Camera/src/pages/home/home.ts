@@ -7,13 +7,12 @@ import	{	Camera }	from	'@ionic-native/camera';
 })
 export	class	HomePage	{
 		public	imageData:	string;
-    public camera : Camera;
 		@Input('useURI')	useURI:	Boolean	=	true;
 		
-		constructor(public	navCtrl:	NavController)	{
+		constructor(private camera: Camera)	{
 		}
 		
-		getPicture(sourceType){
+		obtener(sourceType){
 				this.camera.getPicture({
 								quality:	50,
 								allowEdit:	true,

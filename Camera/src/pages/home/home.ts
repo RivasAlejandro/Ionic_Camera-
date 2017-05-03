@@ -3,7 +3,7 @@ import	{	NavController	}	from	'ionic-angular';
 import	{	Camera }	from	'@ionic-native/camera';
 @Component({
 		selector:	'page-home',
-		templateUrl:	'home.html'
+		templateUrl:'home.html'
 })
 export	class	HomePage	{
 		public	imageData:	string;
@@ -12,8 +12,10 @@ export	class	HomePage	{
 		constructor(private camera: Camera)	{
 		}
 		
+
 		obtener(sourceType){
 				this.camera.getPicture({
+
 								quality:	50,
 								allowEdit:	true,
 								encodingType:	this.camera.EncodingType.JPEG,
